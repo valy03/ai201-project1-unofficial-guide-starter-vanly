@@ -79,7 +79,7 @@ Since my sources mostly contain reviews and reddit threads, I think that MiniLM 
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 |  What are the operating hours of the College Nine & Ten dining hall on weekdays? | [Should mention Monday-Friday from 7am to 11pm, bonus if mention that C9/C10 opens on weekends unlike other dining hall: weekday open/close times from dining.ucsc.edu/locations-hours] |
+| 1 | What are the operating hours of the College Nine / John R. Lewis dining hall? | Open 7AM-11PM Tuesday-Saturday (breakfast 7-11, lunch 11:30-2, dinner 5-8, Late Night 8-11) and 7AM-8PM Sunday-Monday (no Late Night). Bonus: it offers Late Night service, which most halls don't. (Source: dining.ucsc.edu/locations-hours/nine-jrl) |
 | 2 | Can I use Banana Bucks at any dining hall, and do they roll over between quarters? | [Should mention that Banana Bucks carry over quarter to quarter but expire at the end of the academic year: where Banana Bucks are accepted + rollover/expiration rule from dining.ucsc.edu meal-plan page] |
 | 3 | Which dining hall do UCSC students consider the best, and why? | [Should mention that Cowell/Steven, Crown/Merrill are consistent, C9/C10 is considered the most liked, and Porter dining hall is viewed as the worst: most-praised hall(s) across Reddit #8/#10/#11 + reasons cited (food quality, variety) — checklist] |
 | 4 | What off-campus restaurants near UCSC do students recommend? | [Zoccolis, Jack’s, Sesame, Zachary’s, Abbott Square, Betty’s, The Bagelry, Lillian’s, Mission St. BBQ, Pizza my Heart, Dolphin. Can also mention any resturants from reddit that corrporates with wanderlog's top resturants in santa cruz: named restaurants appearing across Wanderlog #3 + Reddit recommendation thread #12] |
