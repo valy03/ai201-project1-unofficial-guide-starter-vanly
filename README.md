@@ -69,9 +69,9 @@ This system covers student experiences with campus dining and nearby food option
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
 
-**Model used:**
+**Model used:** all-MiniLM-L6-v2 via sentence-transformers, with embeddings stored in ChromaDB using cosine distance. It runs locally with no API key or rate limits, which fits a small project, and its 384-dim vectors are fast to embed and query. Each chunk's source label is prepended before embedding (a contextual chunk header) to restore document-level context lost during splitting; retrieval uses top-k = 5. Across the 5 evaluation queries, top-result cosine distances were 0.18–0.50 (4 of 5 clearly below 0.5).
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** MiniLM's main limitation is its ~256-token context window — longer or messier chunks get truncated before embedding, which is why chunking was capped at 256 tokens. If cost weren't a constraint and this were deployed for real users, I'd weigh a longer-context, higher-accuracy model (e.g. a hosted `text-embedding-3-large` or a larger BGE/GTE model): longer context would remove the truncation constraint and let chunks carry more semantic signal, and a stronger model would better distinguish near-duplicate opinions ("good but crowded" vs. "crowded so it's bad") and separate semantically similar but distinct topics — exactly the failure I hit where "off-campus restaurants" retrieved on-campus dining halls. The tradeoffs would be added per-call latency and cost and a dependency on an external API instead of a free local model. Multilingual support isn't relevant here since the corpus is English-only.
 
 ---
 

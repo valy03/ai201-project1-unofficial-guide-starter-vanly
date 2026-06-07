@@ -68,6 +68,8 @@ For my domain, I chose a system that covers student experiences with campus dini
 
 **Production tradeoff reflection:**
 Since my sources mostly contain reviews and reddit threads, I think that MiniLM would be best embedding model sine it is quick and simple because it can only handle 256 tokens on average. This also means that we won't be able to efficiently retrieve messier or longer text that well. 
+
+**Implementation update (Milestone 4):** Stored vectors in ChromaDB with cosine distance and L2-normalized embeddings. Added a *contextual chunk header* — each chunk's source label is prepended to its text before embedding (the stored/displayed text stays clean). This restores document-level context that is lost when a document is split into chunks (e.g. a bare "Gabriella Cafe: Italian..." list item no longer signals "off-campus restaurant"), and fixed the off-campus-restaurants query, which had been returning on-campus dining-hall reviews. Also learned that noisy chunks both pollute content and inflate distance: trimming nav/boilerplate out of the dining-hours document dropped its hours query distance from 0.30 to 0.18.
 ---
 
 ## Evaluation Plan
@@ -127,7 +129,7 @@ The **query → retrieval → generation** path is the **online** pipeline that 
                                                     │
                                                     ▼
                                           [5] Generation
-                                          Claude (Anthropic API)
+                                          Groq API (Llama 3.x)
                                           question + 5 chunks
                                                     │
                                                     ▼
@@ -156,4 +158,4 @@ I'll use **Claude** for this milestone. As input I'll give it my **Documents** t
 I'll use **Claude** with my **Retrieval Approach** and **Architecture** sections as input. I'll ask it to write code that embeds every chunk with `all-MiniLM-L6-v2` via `sentence-transformers`, stores the vectors plus metadata in **ChromaDB**, and implements a `retrieve(query, k=5)` function that embeds the query and returns the top-5 chunks by cosine similarity. I'll verify by running my 5 evaluation questions through `retrieve()` and confirming the returned chunks actually come from the sources I expect (e.g. Q1 pulls from the official hours page, Q3 pulls from the Reddit threads) — this directly tests the off-topic-retrieval risk in my Anticipated Challenges.
 
 **Milestone 5 — Generation and interface:**
-I'll use **Claude** with my **Evaluation Plan** as input. I'll ask it to write the generation step that sends the user's question plus the 5 retrieved chunks to the **Claude API** with a prompt that requires answering only from the provided chunks and citing the source of each claim (addressing my missing-attribution risk), plus a simple interface (CLI or Streamlit) to type a question and see the answer with sources. I'll verify by running all 5 evaluation questions end-to-end and comparing each response against my recorded expected answers, checking both correctness and that citations point to the right source.
+I'll use **Claude** (as my coding assistant) with my **Evaluation Plan** as input. I'll ask it to write the generation step that sends the user's question plus the 5 retrieved chunks to the **Groq API** (Llama 3.x — the free, no-credit-card key the starter is set up for via `GROQ_API_KEY`) with a prompt that requires answering only from the provided chunks and citing the source of each claim (addressing my missing-attribution risk), plus a simple interface (CLI or Streamlit) to type a question and see the answer with sources. I'll verify by running all 5 evaluation questions end-to-end and comparing each response against my recorded expected answers, checking both correctness and that citations point to the right source.

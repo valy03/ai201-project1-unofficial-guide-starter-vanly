@@ -1,187 +1,19 @@
 SOURCE: UCSC Dining (official) -- locations & hours
 URL: https://dining.ucsc.edu/locations-hours/
 ---
-Locations and hours
-What’s open right now
-The times displayed reflect the most current schedule. Please check upcoming special hours for planning purposes.
+UCSC Dining locations.
 
-Dining halls
-College Nine and John R. Lewis Dining Hall
-OPEN - Closes at 11 PM
-›
-Cowell/Stevenson Dining Hall
-OPEN - Closes at 8 PM
-›
-Crown/Merrill Dining Hall
-CLOSED - Opens June 8 at 7 AM
-›
-Porter⁄Kresge Dining Hall
-CLOSED - Opens June 8 at 7 AM
-›
-Rachel Carson⁄Oakes Dining Hall
-OPEN - Closes at 8 PM
-›
-Cafes and restaurants
-Banana Joe’s Late Night
-CLOSED - Opens June 8 at 8 PM
-›
-Global Village Cafe
-CLOSED - Opens June 8 at 8 AM
-›
-Oakes Cafe
-CLOSED - Opens June 8 at 8 AM
-›
-Stevenson Coffee House
-CLOSED - Opens June 8 at 8 AM
-›
-University Center Cafe
-CLOSED - Opens June 8 at 8 AM
-›
-Owl’s Nest
-CLOSED - Opens June 8 at 8 AM
-›
-University Center Bistro – Closed until Fall 2026
-›
-Perk Coffee Bars
-Perk Coffee Bar at Baskin Engineering
-CLOSED - Opens June 8 at 8 AM
-›
-Perk Coffee Bar at Earth & Marine Sciences
-CLOSED - Opens June 8 at 8 AM
-›
-Perk Coffee Bar at Physical Sciences Building
-CLOSED - Opens June 8 at 8 AM
-›
-Markets
-Merrill Market
-CLOSED - Opens June 8 at 9 AM
-›
-Porter Market
-CLOSED - Opens June 8 at 8 AM
-›
-Slug Stop – Closed due to construction until further notice
-›
+Dining halls: College Nine/John R. Lewis (C9/JRL), Cowell/Stevenson, Crown/Merrill, Porter/Kresge, Rachel Carson/Oakes.
+Cafes and restaurants: Banana Joe's Late Night, Global Village Cafe, Oakes Cafe, Owl's Nest, Stevenson Coffee House, University Center Cafe, University Center Bistro (closed until Fall 2026).
+Perk Coffee Bars: Baskin Engineering, Earth & Marine Sciences, Physical Sciences Building.
+Markets: Merrill Market, Porter Market, Slug Stop (closed for construction until further notice).
 
-Other campus dining Options
-Iveta
-Food Trucks
-Experiencing food insecurity?
-Cowell Coffee Shop
-Redwood Free Market
+Regular weekly serving hours for each dining hall:
 
-Commencement Weekend special hours
-(June 12, 2026 – June 15, 2026)
-
-Intersession special hours
-(June 16, 2026 – June 20, 2026)
-
-Juneteenth special hours
-(June 19, 2026)
-
-Dining Halls
-College Nine/John R. Lewis
-Cowell/Stevenson
-Crown/Merrill
-Porter/Kresge
-Rachel Carson/Oakes
-Cafes and restaurants
-Banana Joe’s Late Night
-Global Village Cafe
-Oakes Cafe
-Owl’s Nest Cafe 
-Stevenson Coffee House
-University Center Bistro
-University Center Cafe
-Perk Coffee Bar Locations
-Baskin Engineering
-Earth and Marine Sciences
-Physical Sciences
-Markets
-Slug Stop
-Merrill Market
-Porter Market
-Dining Halls
-College Nine/JRL Dining Hall
-Check special hours
-Check out College Nine/JRL Dining Hall
-
-Cowell/Stevenson Dining Hall
-Check special hours
-Check out Cowell/Stevenson Dining Hall
-
-Crown/Merrill Dining Hall
-Check special hours
-Check out Crown/Merrill Dining Hall
-
-Porter/Kresge Dining Hall
-Check special hours
-Check out Porter/Kresge Dining Hall
-
-Rachel Carson/Oakes Dining Hall
-Check special hours
-Check out Rachel Carson/Oakes Dining Hall
-
-Cafes and Restaurants
-Banana Joe’s Late Night
-Check special hours
-Check out Banana Joe’s Late Night
-
-Global Village Cafe
-Check special hours
-Check out Global Village Cafe
-
-Oakes Cafe
-Check special hours
-Check out Oakes Cafe
-
-Owl’s Nest
-Check special hours
-Check out Owl’s Nest
-
-Stevenson Coffee House
-Check special hours
-Check out Stevenson Coffee House
-
-University Center Bistro – closed until Fall 2026
-Check special hours
-Check out University Center Bistro
-
-University Center Cafe
-Check special hours
-Check out University Center Cafe
-
-Perk Coffee Bars
-Perk Coffee Bar at Baskin Engineering
-Check special hours
-Check out Perk Coffee Bar at Baskin Engineering
-
-Perk Coffee Bar at Earth & Marine Sciences
-Check special hours
-Check out Perk Coffee Bar at Earth & Marine Sciences
-
-Perk Coffee Bar at Physical Sciences Building
-Check special hours
-Check out Perk Coffee Bar at Physical Sciences Building
-
-Markets
-Merrill Market
-Check special hours
-Check out Merrill Market
-
-Porter Market
-Check special hours
-Check out Porter Market
-
-Slug Stop – Closed due to construction until further notice
-Check special hours
-Check out Slug Stop
-
-=== Regular weekly serving hours (from each dining hall's hours page) ===
-
-College Nine/John R. Lewis Dining Hall regular hours:
+College Nine/John R. Lewis Dining Hall (C9/JRL) regular hours:
 Tuesday through Saturday: Breakfast 7-11AM, Continuous Dining 11-11:30AM, Lunch 11:30AM-2PM, Continuous Dining 2-5PM, Dinner 5-8PM, Late Night 8-11PM.
 Sunday and Monday: Breakfast 7-11AM, Continuous Dining 11-11:30AM, Lunch 11:30AM-2PM, Continuous Dining 2-5PM, Dinner 5-8PM (no Late Night).
-So College Nine/JRL is open 7AM to 11PM Tuesday-Saturday and 7AM to 8PM Sunday-Monday. It offers Late Night service, which most dining halls do not.
+So College Nine/John R. Lewis is open 7AM to 11PM Tuesday-Saturday and 7AM to 8PM Sunday-Monday. It offers Late Night service, which most dining halls do not.
 
 Cowell/Stevenson Dining Hall regular hours:
 Monday through Thursday: Breakfast 7-11AM, Continuous Dining 11-11:30AM, Lunch 11:30AM-2PM, Continuous Dining 2-5PM, Dinner 5-8PM, Late Night 8-11PM.
@@ -191,3 +23,4 @@ Sunday: Breakfast 7-10AM, Brunch 10AM-2PM, Continuous Dining 2-5PM, Dinner 5-8PM
 
 Crown/Merrill Dining Hall regular hours:
 Monday through Friday: Breakfast 7-11AM, Continuous Dining 11-11:30AM (limited entree options), Lunch 11:30AM-2PM, Continuous Dining 2-5PM (limited entree options), Dinner 5-8PM.
+Crown/Merrill Dining Hall is closed on weekends.
