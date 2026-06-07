@@ -46,6 +46,12 @@ _BOILERPLATE_LINE = re.compile(
         useful\s*\d*|
         \d+\s*(likes?|shares?)|
         was\s+this\s+review\s+\.*\?*|
+        \[deleted\]|\[removed\]|op|                   # reddit removed comments / OP tag
+        u/\S+(\s+avatar)?|                            # "u/Name" / "u/Name avatar"
+        give\s+award|vote|upvote|downvote|            # reddit comment actions
+        -\d+|                                         # negative vote scores
+        \d+\s+more\s+repl(y|ies)|                     # "2 more replies"
+        promoted|view\s+more|thumbnail\s+image:.*|    # promoted-ad scaffolding
         [‹›»«>•·]+|      # stray nav arrows/bullets: > >> bullets
         check\s*out\b.*|                              # "Check out X" nav links
         check\s+special\s+hours|                      # UCSC dining nav
@@ -70,6 +76,29 @@ _YELP_META_LINE = re.compile(
     )\s*$""",
     re.VERBOSE,
 )
+
+# A Reddit comment header is "<username>\n<timestamp>". The timestamp is easy to
+# match; the username is arbitrary, so we identify it only by position (the line
+# directly above a timestamp) rather than by pattern.
+_TIMESTAMP_LINE = re.compile(
+    r"^\s*(\d+\s*(y|yr|mo|mon|w|wk|d|h|hr|m|min|s|sec)\s+ago|just\s+now|edited.*)\s*$",
+    re.IGNORECASE,
+)
+# Username-like: a single token (no spaces) of plausible username length.
+_USERNAME_LIKE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_\-]{1,28}$")
+
+
+def _drop_reddit_comment_headers(lines: list[str]) -> list[str]:
+    """Remove "<username> / <timestamp>" comment headers from Reddit pastes."""
+    result: list[str] = []
+    for line in lines:
+        if _TIMESTAMP_LINE.match(line):
+            # Drop the timestamp, and the username line we appended just before it.
+            if result and _USERNAME_LIKE.match(result[-1].strip()):
+                result.pop()
+            continue
+        result.append(line)
+    return result
 
 
 @dataclass
@@ -158,6 +187,7 @@ def clean_text(raw: str, is_html: bool = False) -> str:
         # Collapse runs of internal whitespace within the line.
         cleaned_lines.append(re.sub(r"[ \t]{2,}", " ", line))
 
+    cleaned_lines = _drop_reddit_comment_headers(cleaned_lines)
     text = "\n".join(cleaned_lines)
     # Collapse 3+ blank lines down to a single blank line (paragraph break).
     text = re.sub(r"\n{3,}", "\n\n", text).strip()
