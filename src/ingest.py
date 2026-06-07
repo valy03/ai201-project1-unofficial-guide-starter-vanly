@@ -41,6 +41,7 @@ _BOILERPLATE_LINE = re.compile(
         read\s*more|see\s*more|show\s*more|
         log\s*in|sign\s*up|continue\s*reading|
         helpful|thanks|cool|oh\s*no|funny|            # yelp reaction buttons
+        first\s+to\s+review|start\s+your\s+review|
         \d+\s*(comments?|replies|upvotes?|points?)|   # "12 comments", "3 points"
         useful\s*\d*|
         \d+\s*(likes?|shares?)|
@@ -53,6 +54,21 @@ _BOILERPLATE_LINE = re.compile(
         experiencing\s+food\s+insecurity\??
     )\s*$""",
     re.IGNORECASE | re.VERBOSE,
+)
+
+# Yelp review metadata lines (reviewer card chrome). Compiled WITHOUT IGNORECASE
+# so the capitalization in the patterns actually constrains matches and we don't
+# strip lowercase review text that happens to look similar (e.g. "well, ok").
+_YELP_META_LINE = re.compile(
+    r"""^\s*(
+        Elite\s+\d+|                            # "Elite 26" badge
+        \d{1,20}|                               # bare friend/review/photo counts & user IDs
+        \d+\s+photos?|                          # "2 photos"
+        [A-Z][a-z]{2,9}\.?\s+\d{1,2},\s+\d{4}|  # date: "Oct 29, 2025"
+        [A-Z][A-Za-z .'’-]+,\s+[A-Z]{2}|        # location: "Temple City, CA"
+        [A-Z][A-Za-z'’-]+\s+[A-Z]\.             # reviewer name: "Kayson T."
+    )\s*$""",
+    re.VERBOSE,
 )
 
 
@@ -137,7 +153,7 @@ def clean_text(raw: str, is_html: bool = False) -> str:
         if not line:
             cleaned_lines.append("")
             continue
-        if _BOILERPLATE_LINE.match(line):
+        if _BOILERPLATE_LINE.match(line) or _YELP_META_LINE.match(line):
             continue
         # Collapse runs of internal whitespace within the line.
         cleaned_lines.append(re.sub(r"[ \t]{2,}", " ", line))
